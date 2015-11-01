@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import lwt.lab.utils.ResponseUtils;
 
 /**
- * Servlet implementation class TestServlet1
+ * Servlet implementation class Table
  */
-@WebServlet("/test1")
-public class TestServlet1 extends HttpServlet {
+@WebServlet("/table")
+public class Table extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TestServlet1() {
+    public Table() {
 	super();
+	// TODO Auto-generated constructor stub
     }
 
     /**
@@ -29,8 +30,16 @@ public class TestServlet1 extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-	String body = "this be mi first servlit.";
-	response.getWriter().append(ResponseUtils.titleBodyStyleHTML("Primul", body));
+	StringBuilder htmlBuilder = new StringBuilder();
+	String[][] data = new String[10][5];
+	for(int i=0;i<data.length;i++) {
+	    for(int j=0;j<data[i].length;j++) {
+		data[i][j] = i+"-"+j;
+	    }
+	}
+	String[] headers = {"H1","H2","H3","H4","H5"};
+	htmlBuilder.append(ResponseUtils.titleBodyStyleHTML("Table", ResponseUtils.appendTableWithHeader(data, headers)));
+	response.getWriter().append(htmlBuilder);
     }
 
     /**
@@ -39,6 +48,7 @@ public class TestServlet1 extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
+	// TODO Auto-generated method stub
 	doGet(request, response);
     }
 
