@@ -30,7 +30,7 @@ public class TestServlet1 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 	String body = "this be mi first servlit.";
-	response.getWriter().append(ResponseUtils.titleBodyStyleHTML("Primul", body));
+	response.getWriter().append(ResponseUtils.titleBodyStyleHTML("Primul", body, "./css/styles.css"));
     }
 
     /**

@@ -38,7 +38,7 @@ public class Table extends HttpServlet {
 	    }
 	}
 	String[] headers = {"H1","H2","H3","H4","H5"};
-	htmlBuilder.append(ResponseUtils.titleBodyStyleHTML("Table", ResponseUtils.appendTableWithHeader(data, headers)));
+	htmlBuilder.append(ResponseUtils.titleBodyStyleHTML("Table", ResponseUtils.appendTableWithHeader(data, headers), "./css/styles.css"));
 	response.getWriter().append(htmlBuilder);
     }
 

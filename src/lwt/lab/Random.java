@@ -33,7 +33,7 @@ public class Random extends HttpServlet {
 	    for(int i=0;i<4;i++) {
 		data[i]= "" + Math.round(Math.random()*20);
 	    }
-	    htmlResponse.append(ResponseUtils.titleBodyStyleHTML("Random", ResponseUtils.appendUL(data)));
+	    htmlResponse.append(ResponseUtils.titleBodyStyleHTML("Random", ResponseUtils.appendUL(data), "./css/styles.css"));
 	    response.getWriter().append(htmlResponse);
 	}
 
