@@ -1,6 +1,7 @@
 package lwt.lab;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +22,6 @@ public class Table extends HttpServlet {
      */
     public Table() {
 	super();
-	// TODO Auto-generated constructor stub
     }
 
     /**
@@ -32,13 +32,14 @@ public class Table extends HttpServlet {
 	    throws ServletException, IOException {
 	StringBuilder htmlBuilder = new StringBuilder();
 	String[][] data = new String[10][5];
-	for(int i=0;i<data.length;i++) {
-	    for(int j=0;j<data[i].length;j++) {
-		data[i][j] = i+"-"+j;
+	for (int i = 0; i < data.length; i++) {
+	    for (int j = 0; j < data[i].length; j++) {
+		data[i][j] = i + "-" + j;
 	    }
 	}
-	String[] headers = {"H1","H2","H3","H4","H5"};
-	htmlBuilder.append(ResponseUtils.titleBodyStyleHTML("Table", ResponseUtils.appendTableWithHeader(data, headers), "./css/styles.css"));
+	String[] headers = { "H1", "H2", "H3", "H4", "H5" };
+	htmlBuilder.append(ResponseUtils.titleBodyStyleHTML("Table", ResponseUtils.appendTableWithHeader(data, headers),
+		"./css/styles.css"));
 	response.getWriter().append(htmlBuilder);
     }
 
@@ -48,7 +49,6 @@ public class Table extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-	// TODO Auto-generated method stub
 	doGet(request, response);
     }
 
