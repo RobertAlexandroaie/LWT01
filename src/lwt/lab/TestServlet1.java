@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lwt.lab.utils.ResponseUtils;
+import lwt.lab.html.utils.HTMLUtils;
 
 /**
  * Servlet implementation class TestServlet1
@@ -30,7 +30,7 @@ public class TestServlet1 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 	String body = "this be mi first servlit.";
-	response.getWriter().append(ResponseUtils.titleBodyStyleHTML("Primul", body, "./css/styles.css"));
+	response.getWriter().append(HTMLUtils.titleBodyStyleHTML("Primul", body, "./css/styles.css"));
     }
 
     /**

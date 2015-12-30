@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lwt.lab.utils.ResponseUtils;
+import lwt.lab.html.utils.HTMLUtils;
 
 /**
  * Servlet implementation class Random
@@ -36,7 +36,7 @@ public class Random extends HttpServlet {
 	    data[i] = "" + Math.round(Math.random() * 20);
 	}
 	htmlResponse
-		.append(ResponseUtils.titleBodyStyleHTML("Random", ResponseUtils.appendUL(data), "./css/styles.css"));
+		.append(HTMLUtils.titleBodyStyleHTML("Random", HTMLUtils.createUL(data), "./css/styles.css"));
 	response.getWriter().append(htmlResponse);
     }
 

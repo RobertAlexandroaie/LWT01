@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lwt.lab.utils.ResponseUtils;
+import lwt.lab.html.utils.HTMLUtils;
 
 /**
  * Servlet implementation class Table
@@ -38,7 +38,7 @@ public class Table extends HttpServlet {
 	    }
 	}
 	String[] headers = { "H1", "H2", "H3", "H4", "H5" };
-	htmlBuilder.append(ResponseUtils.titleBodyStyleHTML("Table", ResponseUtils.appendTableWithHeader(data, headers),
+	htmlBuilder.append(HTMLUtils.titleBodyStyleHTML("Table", HTMLUtils.createTable(data, headers),
 		"./css/styles.css"));
 	response.getWriter().append(htmlBuilder);
     }
